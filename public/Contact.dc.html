@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #121311; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: #E4531F; color: #121311; }
+  input::placeholder, textarea::placeholder { color: #5c625b; }
+  select option { background: #1a1c18; color: #F4F4F0; }
+</style>
+</helmet>
+
+<div style="width: 100%; background: #121311; color: #F4F4F0; font-family: 'IBM Plex Sans', sans-serif; overflow: hidden;">
+
+  <dc-import name="Header" hint-size="100%,82px"></dc-import>
+
+  <!-- banner -->
+  <section style="position: relative; min-height: 360px; display:flex; align-items:flex-end; background-image: linear-gradient(180deg, rgba(18,19,17,0.55) 0%, rgba(18,19,17,0.75) 55%, rgba(18,19,17,0.97) 100%), url('assets/hero-site.png'); background-size: cover; background-position: center 40%;">
+    <div style="width:100%; max-width: 1280px; margin: 0 auto; padding: 0 56px 52px;">
+      <div style="display:inline-flex; align-items:center; gap:10px; margin-bottom: 18px;">
+        <span style="width: 32px; height: 2px; background:#E4531F;"></span>
+        <span style="font-size: 12.5px; letter-spacing: 0.28em; text-transform: uppercase; color:#F4B78F; font-weight:600;">Contact &amp; Bid Requests</span>
+      </div>
+      <h1 style="font-family:'Archivo',sans-serif; font-weight: 900; font-size: 60px; line-height: 0.98; letter-spacing: -0.03em; text-transform: uppercase; margin: 0; max-width: 860px;">Request a bid or get in touch</h1>
+      <p style="font-size: 18px; line-height: 1.55; max-width: 640px; margin: 22px 0 0; color: #DDE0DB;">Send us your project details and finish carpentry scope, and we'll follow up with next steps. Hiring inquiries are welcome here too.</p>
+    </div>
+  </section>
+
+  <!-- form + info -->
+  <section>
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 56px; display:grid; grid-template-columns: 1.5fr 1fr; gap: 64px; align-items:start;">
+
+      <!-- form column -->
+      <div>
+        <sc-if value="{{ formVisible }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" style="display:flex; flex-direction:column; gap: 24px;">
+            <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:22px; text-transform:uppercase; letter-spacing:-0.01em; border-bottom:1px solid rgba(255,255,255,0.12); padding-bottom:16px;">Project details</div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <label style="display:flex; flex-direction:column; gap:8px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#9aa09a; font-family:'Archivo',sans-serif; font-weight:600;">Name*
+                <input name="name" required placeholder="Your name" style="background:#1a1c18; border:1px solid rgba(255,255,255,0.15); color:#F4F4F0; padding:14px 16px; font-size:15px; font-family:'IBM Plex Sans',sans-serif;" style-focus="border-color:#E4531F; outline:none;">
+              </label>
+              <label style="display:flex; flex-direction:column; gap:8px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#9aa09a; font-family:'Archivo',sans-serif; font-weight:600;">Company
+                <input name="company" placeholder="Company name" style="background:#1a1c18; border:1px solid rgba(255,255,255,0.15); color:#F4F4F0; padding:14px 16px; font-size:15px; font-family:'IBM Plex Sans',sans-serif;" style-focus="border-color:#E4531F; outline:none;">
+              </label>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <label style="display:flex; flex-direction:column; gap:8px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#9aa09a; font-family:'Archivo',sans-serif; font-weight:600;">Email*
+                <input name="email" type="email" required placeholder="you@company.com" style="background:#1a1c18; border:1px solid rgba(255,255,255,0.15); color:#F4F4F0; padding:14px 16px; font-size:15px; font-family:'IBM Plex Sans',sans-serif;" style-focus="border-color:#E4531F; outline:none;">
+              </label>
+              <label style="display:flex; flex-direction:column; gap:8px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#9aa09a; font-family:'Archivo',sans-serif; font-weight:600;">Phone
+                <input name="phone" placeholder="(000) 000-0000" style="background:#1a1c18; border:1px solid rgba(255,255,255,0.15); color:#F4F4F0; padding:14px 16px; font-size:15px; font-family:'IBM Plex Sans',sans-serif;" style-focus="border-color:#E4531F; outline:none;">
+              </label>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <label style="display:flex; flex-direction:column; gap:8px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#9aa09a; font-family:'Archivo',sans-serif; font-weight:600;">I am a
+                <select name="role" style="background:#1a1c18; border:1px solid rgba(255,255,255,0.15); color:#F4F4F0; padding:14px 16px; font-size:15px; font-family:'IBM Plex Sans',sans-serif;" style-focus="border-color:#E4531F; outline:none;">
+                  <option>General Contractor</option>
+                  <option>Construction Manager</option>
+                  <option>Developer</option>
+                  <option>Property Owner</option>
+                  <option>Builder</option>
+                  <option>Job Seeker</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label style="display:flex; flex-direction:column; gap:8px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#9aa09a; font-family:'Archivo',sans-serif; font-weight:600;">Inquiry type
+                <select name="inquiry" style="background:#1a1c18; border:1px solid rgba(255,255,255,0.15); color:#F4F4F0; padding:14px 16px; font-size:15px; font-family:'IBM Plex Sans',sans-serif;" style-focus="border-color:#E4531F; outline:none;">
+                  <option>Bid Request</option>
+                  <option>General Inquiry</option>
+                  <option>Careers / Employment</option>
+                </select>
+              </label>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <label style="display:flex; flex-direction:column; gap:8px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#9aa09a; font-family:'Archivo',sans-serif; font-weight:600;">Project type
+                <select name="projectType" style="background:#1a1c18; border:1px solid rgba(255,255,255,0.15); color:#F4F4F0; padding:14px 16px; font-size:15px; font-family:'IBM Plex Sans',sans-serif;" style-focus="border-color:#E4531F; outline:none;">
+                  <option>Commercial</option>
+                  <option>Multifamily</option>
+                  <option>Hospitality</option>
+                  <option>Senior Living</option>
+                  <option>Institutional</option>
+                  <option>Residential</option>
+                  <option>Other / Not sure</option>
+                </select>
+              </label>
+              <label style="display:flex; flex-direction:column; gap:8px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#9aa09a; font-family:'Archivo',sans-serif; font-weight:600;">Project location
+                <input name="location" placeholder="City, MI" style="background:#1a1c18; border:1px solid rgba(255,255,255,0.15); color:#F4F4F0; padding:14px 16px; font-size:15px; font-family:'IBM Plex Sans',sans-serif;" style-focus="border-color:#E4531F; outline:none;">
+              </label>
+            </div>
+
+            <label style="display:flex; flex-direction:column; gap:8px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#9aa09a; font-family:'Archivo',sans-serif; font-weight:600;">Scope &amp; details
+              <textarea name="details" rows="5" placeholder="Tell us about the finish carpentry scope, timeline, and any plans or documents you'd like to share." style="background:#1a1c18; border:1px solid rgba(255,255,255,0.15); color:#F4F4F0; padding:14px 16px; font-size:15px; font-family:'IBM Plex Sans',sans-serif; resize:vertical;" style-focus="border-color:#E4531F; outline:none;"></textarea>
+            </label>
+
+            <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+              <button type="submit" style="background:#E4531F; color:#121311; padding: 17px 34px; font-weight:800; font-size:15px; letter-spacing:0.04em; text-transform:uppercase; font-family:'Archivo',sans-serif; border:none; cursor:pointer;" style-hover="background:#ff6a34;">Submit Request</button>
+              <span style="font-size:13px; color:#565a53;">We typically respond within one to two business days.</span>
+            </div>
+          </form>
+        </sc-if>
+
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="border:1px solid rgba(228,83,31,0.5); background:#1a1c18; padding: 48px 44px;">
+            <div style="width:52px; height:52px; background:#E4531F; color:#121311; display:flex; align-items:center; justify-content:center; font-size:28px; font-weight:900; font-family:'Archivo',sans-serif;">✓</div>
+            <h3 style="font-family:'Archivo',sans-serif; font-weight:900; font-size:32px; text-transform:uppercase; letter-spacing:-0.02em; margin:24px 0 12px;">Request received</h3>
+            <p style="font-size:17px; line-height:1.65; color:#9aa09a; max-width:460px; margin:0;">Thanks for reaching out to D&amp;B Trim Carpentry. We've received your information and will follow up within one to two business days.</p>
+            <a href="DandB%20Homepage.dc.html" style="display:inline-block; margin-top:28px; font-size:13px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; color:#E4531F; font-family:'Archivo',sans-serif;">← Back to home</a>
+          </div>
+        </sc-if>
+      </div>
+
+      <!-- info column -->
+      <div style="display:flex; flex-direction:column; gap:1px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.1);">
+        <div style="background:#121311; padding: 30px 30px;">
+          <div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#E4531F; font-weight:700; font-family:'Archivo',sans-serif; margin-bottom:12px;">Phone</div>
+          <div style="font-family:'Archivo',sans-serif; font-size:22px; font-weight:800;">(000) 000-0000</div>
+        </div>
+        <div style="background:#121311; padding: 30px 30px;">
+          <div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#E4531F; font-weight:700; font-family:'Archivo',sans-serif; margin-bottom:12px;">Email</div>
+          <div style="font-family:'Archivo',sans-serif; font-size:20px; font-weight:800;">bids@dbtrim.com</div>
+        </div>
+        <div style="background:#121311; padding: 30px 30px;">
+          <div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#E4531F; font-weight:700; font-family:'Archivo',sans-serif; margin-bottom:12px;">Service area</div>
+          <div style="font-size:15px; line-height:1.6; color:#DDE0DB;">Finish carpentry installation on projects throughout Michigan.</div>
+        </div>
+        <div style="background:#121311; padding: 30px 30px;">
+          <div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#E4531F; font-weight:700; font-family:'Archivo',sans-serif; margin-bottom:12px;">Office hours</div>
+          <div style="font-size:15px; line-height:1.6; color:#DDE0DB;">Monday – Friday<br>7:00 AM – 4:00 PM ET</div>
+        </div>
+        <div style="background:#E4531F; color:#121311; padding: 30px 30px;">
+          <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:18px; text-transform:uppercase; letter-spacing:-0.01em; line-height:1.2;">Have plans to send?</div>
+          <div style="font-size:14.5px; line-height:1.6; margin-top:10px; color:#3a1a0d;">Email your drawings and scope directly and reference your project name—we'll get it to our estimating team.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,360px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { submitted: false };
+  renderVals() {
+    return {
+      submitted: this.state.submitted,
+      formVisible: !this.state.submitted,
+      onSubmit: (e) => {
+        e.preventDefault();
+        this.setState({ submitted: true });
+        try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (err) {}
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

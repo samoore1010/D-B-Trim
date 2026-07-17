@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #121311; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: #E4531F; color: #121311; }
+</style>
+</helmet>
+
+<div style="width: 100%; background: #121311; color: #F4F4F0; font-family: 'IBM Plex Sans', sans-serif; overflow: hidden;">
+
+  <dc-import name="Header" hint-size="100%,82px"></dc-import>
+
+  <!-- banner -->
+  <section style="position: relative; min-height: 420px; display:flex; align-items:flex-end; background-image: linear-gradient(180deg, rgba(18,19,17,0.55) 0%, rgba(18,19,17,0.7) 50%, rgba(18,19,17,0.96) 100%), url('assets/meeting-topdown.png'); background-size: cover; background-position: center;">
+    <div style="width:100%; max-width: 1280px; margin: 0 auto; padding: 0 56px 56px;">
+      <div style="display:inline-flex; align-items:center; gap:10px; margin-bottom: 18px;">
+        <span style="width: 32px; height: 2px; background:#E4531F;"></span>
+        <span style="font-size: 12.5px; letter-spacing: 0.28em; text-transform: uppercase; color:#F4B78F; font-weight:600;">About D&amp;B</span>
+      </div>
+      <h1 style="font-family:'Archivo',sans-serif; font-weight: 900; font-size: 62px; line-height: 0.98; letter-spacing: -0.03em; text-transform: uppercase; margin: 0; max-width: 900px;">An established finish carpentry contractor</h1>
+      <p style="font-size: 19px; line-height: 1.55; max-width: 620px; margin: 24px 0 0; color: #DDE0DB;">For approximately 25 years, D&amp;B has been a dependable finish carpentry partner to contractors, developers, and owners across Michigan.</p>
+    </div>
+  </section>
+
+  <!-- story -->
+  <section style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 100px 56px; display:grid; grid-template-columns: 220px 1fr; gap: 56px;">
+      <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; padding-top: 10px;">01 / Our story</div>
+      <div>
+        <p style="font-family:'Archivo',sans-serif; font-weight: 700; font-size: 34px; line-height: 1.2; letter-spacing:-0.02em; margin: 0; max-width: 900px;">D&amp;B Trim Carpentry is a finish carpentry contractor built around experience, reliability, and long-term relationships.</p>
+        <p style="font-size: 17px; line-height:1.7; color:#9aa09a; margin: 26px 0 0; max-width: 680px;">The company has spent roughly 25 years installing architectural finish materials on construction projects throughout Michigan. Much of that experience has been in commercial, multifamily, and production construction, where consistency, coordination, and manpower matter as much as the finished product.</p>
+        <p style="font-size: 17px; line-height:1.7; color:#9aa09a; margin: 20px 0 0; max-width: 680px;">D&amp;B has grown primarily through repeat business and referrals from contractors and partners who know what to expect when the company is on the job. As the business continues to grow, our capabilities extend well beyond any single market—positioning D&amp;B as a finish carpentry contractor for a wide range of construction opportunities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- stats -->
+  <section style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div style="max-width: 1280px; margin: 0 auto; display:grid; grid-template-columns: repeat(4,1fr);">
+      <div style="padding: 40px 40px; border-right: 1px solid rgba(255,255,255,0.1);">
+        <div style="font-family:'Archivo',sans-serif; font-size: 52px; font-weight: 900; line-height:1; letter-spacing:-0.03em;">25<span style="color:#E4531F;">.</span></div>
+        <div style="font-size: 13px; margin-top: 10px; color:#9aa09a;">Years of finish carpentry experience</div>
+      </div>
+      <div style="padding: 40px 40px; border-right: 1px solid rgba(255,255,255,0.1);">
+        <div style="font-family:'Archivo',sans-serif; font-size: 52px; font-weight: 900; line-height:1; letter-spacing:-0.03em;">5<span style="color:#E4531F;">+</span></div>
+        <div style="font-size: 13px; margin-top: 10px; color:#9aa09a;">Construction markets served</div>
+      </div>
+      <div style="padding: 40px 40px; border-right: 1px solid rgba(255,255,255,0.1);">
+        <div style="font-family:'Archivo',sans-serif; font-size: 52px; font-weight: 900; line-height:1; letter-spacing:-0.03em;">MI<span style="color:#E4531F;">.</span></div>
+        <div style="font-size: 13px; margin-top: 10px; color:#9aa09a;">Serving projects across Michigan</div>
+      </div>
+      <div style="padding: 40px 40px;">
+        <div style="font-family:'Archivo',sans-serif; font-size: 52px; font-weight: 900; line-height:1; letter-spacing:-0.03em;">Full<span style="color:#E4531F;">.</span></div>
+        <div style="font-size: 13px; margin-top: 10px; color:#9aa09a;">Complete finish carpentry packages</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- who we serve -->
+  <section style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 90px 56px;">
+      <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin-bottom: 14px;">02 / Who we serve</div>
+      <h2 style="font-family:'Archivo',sans-serif; font-weight: 900; font-size: 44px; line-height:1; letter-spacing:-0.03em; text-transform:uppercase; margin:0 0 12px;">Built for construction professionals</h2>
+      <p style="font-size: 17px; line-height:1.7; color:#9aa09a; max-width: 640px; margin: 0 0 40px;">D&amp;B works with a wide range of construction professionals and property owners who need a dependable finish carpentry partner.</p>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: 1px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.1);">
+        <div style="background:#121311; padding: 30px 28px; font-family:'Archivo',sans-serif; font-weight:700; font-size:18px;">General Contractors</div>
+        <div style="background:#121311; padding: 30px 28px; font-family:'Archivo',sans-serif; font-weight:700; font-size:18px;">Construction Managers</div>
+        <div style="background:#121311; padding: 30px 28px; font-family:'Archivo',sans-serif; font-weight:700; font-size:18px;">Commercial Developers</div>
+        <div style="background:#121311; padding: 30px 28px; font-family:'Archivo',sans-serif; font-weight:700; font-size:18px;">Property Owners</div>
+        <div style="background:#121311; padding: 30px 28px; font-family:'Archivo',sans-serif; font-weight:700; font-size:18px;">Builders</div>
+        <div style="background:#121311; padding: 30px 28px; font-family:'Archivo',sans-serif; font-weight:700; font-size:18px;">Other Construction Partners</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- what sets us apart -->
+  <section style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 90px 56px;">
+      <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin-bottom: 14px;">03 / What sets us apart</div>
+      <h2 style="font-family:'Archivo',sans-serif; font-weight: 900; font-size: 44px; line-height:1; letter-spacing:-0.03em; text-transform:uppercase; margin:0 0 48px;">Reputation built on execution</h2>
+      <div style="display:grid; grid-template-columns: repeat(2,1fr); gap: 1px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.1);">
+        <div style="background:#121311; padding: 34px 32px;"><div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:20px; color:#E4531F; margin-bottom:10px;">Experienced crews</div><div style="font-size:15px; line-height:1.65; color:#9aa09a;">Installation crews with extensive finish carpentry expertise across a wide range of project types.</div></div>
+        <div style="background:#121311; padding: 34px 32px;"><div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:20px; color:#E4531F; margin-bottom:10px;">Reliable execution</div><div style="font-size:15px; line-height:1.65; color:#9aa09a;">Dependable project execution that contractors can plan around from mobilization through punch list.</div></div>
+        <div style="background:#121311; padding: 34px 32px;"><div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:20px; color:#E4531F; margin-bottom:10px;">Trade coordination</div><div style="font-size:15px; line-height:1.65; color:#9aa09a;">Efficient coordination with other trades and project teams to keep the finish phase on schedule.</div></div>
+        <div style="background:#121311; padding: 34px 32px;"><div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:20px; color:#E4531F; margin-bottom:10px;">Crews that scale</div><div style="font-size:15px; line-height:1.65; color:#9aa09a;">The ability to scale manpower to meet the size, pace, and schedule demands of each project.</div></div>
+        <div style="background:#121311; padding: 34px 32px;"><div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:20px; color:#E4531F; margin-bottom:10px;">Quality workmanship</div><div style="font-size:15px; line-height:1.65; color:#9aa09a;">A consistent standard of finish quality across every scope D&amp;B installs.</div></div>
+        <div style="background:#121311; padding: 34px 32px;"><div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:20px; color:#E4531F; margin-bottom:10px;">Honest communication</div><div style="font-size:15px; line-height:1.65; color:#9aa09a;">Straightforward communication and dependable service, with commitments the company stands behind.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- culture -->
+  <section style="position: relative; background-image: linear-gradient(90deg, rgba(18,19,17,0.96) 0%, rgba(18,19,17,0.9) 45%, rgba(18,19,17,0.7) 100%), url('assets/worker-wall.png'); background-size: cover; background-position: center; border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 96px 56px;">
+      <div style="max-width: 700px;">
+        <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin-bottom: 14px;">04 / Our culture</div>
+        <h2 style="font-family:'Archivo',sans-serif; font-weight: 900; font-size: 40px; line-height:1.05; letter-spacing:-0.03em; text-transform:uppercase; margin:0 0 18px;">Craftsmanship, accountability &amp; relationships</h2>
+        <p style="font-size: 18px; line-height:1.7; color:#DDE0DB; max-width: 620px;">D&amp;B is a company built around doing quality work, standing behind its commitments, and maintaining long-term relationships with both clients and employees. As the company grows, we aim to be recognized not just as a subcontractor, but as an established organization that people want to work with—and work for.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#E4531F; color:#121311;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 90px 56px; display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;">
+      <div>
+        <h2 style="font-family:'Archivo',sans-serif; font-weight: 900; font-size: 52px; line-height:0.95; letter-spacing:-0.03em; text-transform:uppercase; margin:0 0 14px;">Let's talk about<br>your project</h2>
+        <p style="font-size: 18px; margin:0; max-width: 560px; color:#3a1a0d;">Whether you're bidding a project or planning ahead, D&amp;B is ready to help with your finish carpentry scope.</p>
+      </div>
+      <a href="Contact.dc.html" style="background:#121311; color:#F4F4F0; padding: 20px 38px; font-weight:800; font-size:16px; letter-spacing:0.04em; text-transform:uppercase; font-family:'Archivo',sans-serif; white-space:nowrap;" style-hover="background:#000;">Request a Bid →</a>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,360px"></dc-import>
+
+</div>
+</x-dc>
+</body>
+</html>
