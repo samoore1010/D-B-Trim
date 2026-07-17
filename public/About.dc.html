@@ -17,6 +17,12 @@
   body { margin: 0; background: #121311; }
   a { color: inherit; text-decoration: none; }
   ::selection { background: #E4531F; color: #121311; }
+  .dbteam-card { background:#121311; display:flex; flex-direction:column; }
+  .dbteam-card .dbteam-photo { position:relative; aspect-ratio: 4 / 5; overflow:hidden; background:#0d0e0c; }
+  .dbteam-card .dbteam-photo img { width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block; filter: grayscale(100%) contrast(1.03); transition: filter .5s ease, transform .5s ease; }
+  .dbteam-card:hover .dbteam-photo img { filter: grayscale(0%) contrast(1); transform: scale(1.03); }
+  @media (max-width: 980px){ .dbteam-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+  @media (max-width: 560px){ .dbteam-grid { grid-template-columns: 1fr !important; } }
 </style>
 </helmet>
 
@@ -36,10 +42,58 @@
     </div>
   </section>
 
+  <!-- team -->
+  <section style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 90px 56px;">
+      <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin-bottom: 14px;">01 / Our team</div>
+      <h2 style="font-family:'Archivo',sans-serif; font-weight: 900; font-size: 44px; line-height:1; letter-spacing:-0.03em; text-transform:uppercase; margin:0 0 12px;">The people behind the finish</h2>
+      <p style="font-size: 17px; line-height:1.7; color:#9aa09a; max-width: 640px; margin: 0 0 44px;">D&amp;B is a family-run finish carpentry company. The same people who set our standard in the field are the ones you'll work with from bid to punch list.</p>
+      <div class="dbteam-grid" style="display:grid; grid-template-columns: repeat(4,1fr); gap: 1px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.1);">
+
+        <div class="dbteam-card">
+          <div class="dbteam-photo"><img src="assets/team-brian.jpg" alt="Brian Moore, CEO and Founder of D&amp;B Trim Carpentry" loading="lazy"></div>
+          <div style="padding: 26px 26px 30px;">
+            <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:20px; letter-spacing:-0.01em;">Brian Moore</div>
+            <div style="font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin:8px 0 0;">CEO &amp; Founder</div>
+            <p style="font-size:14px; line-height:1.65; color:#9aa09a; margin:16px 0 0;">Brian founded D&amp;B roughly 25 years ago and grew it from a one-man trim operation into an established finish carpentry contractor. He sets the company's direction, keeps its long-standing client relationships strong, and still knows every scope on every job.</p>
+          </div>
+        </div>
+
+        <div class="dbteam-card">
+          <div class="dbteam-photo"><img src="assets/team-tyler.jpg" alt="Tyler Moore, Chief Carpenter at D&amp;B Trim Carpentry" loading="lazy"></div>
+          <div style="padding: 26px 26px 30px;">
+            <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:20px; letter-spacing:-0.01em;">Tyler Moore</div>
+            <div style="font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin:8px 0 0;">Chief Carpenter</div>
+            <p style="font-size:14px; line-height:1.65; color:#9aa09a; margin:16px 0 0;">Tyler leads craftsmanship in the field, from complex millwork and stair systems to the fine architectural trim that defines a finished space. He sets the installation standard every D&amp;B crew is held to.</p>
+          </div>
+        </div>
+
+        <div class="dbteam-card">
+          <div class="dbteam-photo"><img src="assets/team-brandon.jpg" alt="Brandon Moore, Chief Estimator at D&amp;B Trim Carpentry" loading="lazy"></div>
+          <div style="padding: 26px 26px 30px;">
+            <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:20px; letter-spacing:-0.01em;">Brandon Moore</div>
+            <div style="font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin:8px 0 0;">Chief Estimator</div>
+            <p style="font-size:14px; line-height:1.65; color:#9aa09a; margin:16px 0 0;">Brandon runs takeoffs, bids, and budgets, turning a set of plans into an accurate, buildable scope. He's the first point of contact for general contractors during preconstruction and keeps every estimate honest.</p>
+          </div>
+        </div>
+
+        <div class="dbteam-card">
+          <div class="dbteam-photo"><img src="assets/team-jeff.jpg" alt="Jeff Rowbotham, Jobsite Foreperson at D&amp;B Trim Carpentry" loading="lazy"></div>
+          <div style="padding: 26px 26px 30px;">
+            <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:20px; letter-spacing:-0.01em;">Jeff Rowbotham</div>
+            <div style="font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin:8px 0 0;">Jobsite Foreperson</div>
+            <p style="font-size:14px; line-height:1.65; color:#9aa09a; margin:16px 0 0;">Jeff runs day-to-day operations on site, coordinating crews and other trades to keep the finish phase moving. With decades on the jobsite, he's the reason D&amp;B's work stays on schedule and on spec.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- story -->
   <section style="border-bottom: 1px solid rgba(255,255,255,0.1);">
     <div style="max-width: 1280px; margin: 0 auto; padding: 100px 56px; display:grid; grid-template-columns: 220px 1fr; gap: 56px;">
-      <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; padding-top: 10px;">01 / Our story</div>
+      <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; padding-top: 10px;">02 / Our story</div>
       <div>
         <p style="font-family:'Archivo',sans-serif; font-weight: 700; font-size: 34px; line-height: 1.2; letter-spacing:-0.02em; margin: 0; max-width: 900px;">D&amp;B Trim Carpentry is a finish carpentry contractor built around experience, reliability, and long-term relationships.</p>
         <p style="font-size: 17px; line-height:1.7; color:#9aa09a; margin: 26px 0 0; max-width: 680px;">The company has spent roughly 25 years installing architectural finish materials on construction projects throughout Michigan. Much of that experience has been in commercial, multifamily, and production construction, where consistency, coordination, and manpower matter as much as the finished product.</p>
@@ -73,7 +127,7 @@
   <!-- who we serve -->
   <section style="border-bottom: 1px solid rgba(255,255,255,0.1);">
     <div style="max-width: 1280px; margin: 0 auto; padding: 90px 56px;">
-      <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin-bottom: 14px;">02 / Who we serve</div>
+      <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin-bottom: 14px;">03 / Who we serve</div>
       <h2 style="font-family:'Archivo',sans-serif; font-weight: 900; font-size: 44px; line-height:1; letter-spacing:-0.03em; text-transform:uppercase; margin:0 0 12px;">Built for construction professionals</h2>
       <p style="font-size: 17px; line-height:1.7; color:#9aa09a; max-width: 640px; margin: 0 0 40px;">D&amp;B works with a wide range of construction professionals and property owners who need a dependable finish carpentry partner.</p>
       <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: 1px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.1);">
@@ -90,7 +144,7 @@
   <!-- what sets us apart -->
   <section style="border-bottom: 1px solid rgba(255,255,255,0.1);">
     <div style="max-width: 1280px; margin: 0 auto; padding: 90px 56px;">
-      <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin-bottom: 14px;">03 / What sets us apart</div>
+      <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin-bottom: 14px;">04 / What sets us apart</div>
       <h2 style="font-family:'Archivo',sans-serif; font-weight: 900; font-size: 44px; line-height:1; letter-spacing:-0.03em; text-transform:uppercase; margin:0 0 48px;">Reputation built on execution</h2>
       <div style="display:grid; grid-template-columns: repeat(2,1fr); gap: 1px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.1);">
         <div style="background:#121311; padding: 34px 32px;"><div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:20px; color:#E4531F; margin-bottom:10px;">Experienced crews</div><div style="font-size:15px; line-height:1.65; color:#9aa09a;">Installation crews with extensive finish carpentry expertise across a wide range of project types.</div></div>
@@ -107,7 +161,7 @@
   <section style="position: relative; background-image: linear-gradient(90deg, rgba(18,19,17,0.96) 0%, rgba(18,19,17,0.9) 45%, rgba(18,19,17,0.7) 100%), url('assets/worker-wall.png'); background-size: cover; background-position: center; border-bottom: 1px solid rgba(255,255,255,0.1);">
     <div style="max-width: 1280px; margin: 0 auto; padding: 96px 56px;">
       <div style="max-width: 700px;">
-        <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin-bottom: 14px;">04 / Our culture</div>
+        <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin-bottom: 14px;">05 / Our culture</div>
         <h2 style="font-family:'Archivo',sans-serif; font-weight: 900; font-size: 40px; line-height:1.05; letter-spacing:-0.03em; text-transform:uppercase; margin:0 0 18px;">Craftsmanship, accountability &amp; relationships</h2>
         <p style="font-size: 18px; line-height:1.7; color:#DDE0DB; max-width: 620px;">D&amp;B is a company built around doing quality work, standing behind its commitments, and maintaining long-term relationships with both clients and employees. As the company grows, we aim to be recognized not just as a subcontractor, but as an established organization that people want to work with—and work for.</p>
       </div>
