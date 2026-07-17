@@ -1,0 +1,143 @@
+/*
+ * D&B Trim Carpentry — mobile optimizations.
+ *
+ * Every rule lives inside a max-width media query, so the desktop layout is
+ * completely unaffected. The site is built with inline styles on anonymous
+ * elements, so overrides target the rendered inline `style` strings with
+ * [style*="…"] attribute selectors + !important (the runtime preserves those
+ * strings verbatim, so the matches are exact).
+ */
+
+/* ============================== <= 820px ============================== */
+@media (max-width: 820px) {
+
+  /* never allow a horizontal scrollbar on phones/tablets */
+  html, body { overflow-x: hidden !important; max-width: 100% !important; }
+
+  /* let long headings wrap instead of bleeding off-screen */
+  h1, h2, h3, p, span, a, div { overflow-wrap: break-word; }
+
+  /* form controls fill their (now single) column */
+  input, textarea, select { width: 100% !important; max-width: 100% !important; }
+
+  /* heading + button rows (space-between) wrap instead of overflowing */
+  [style*="justify-content: space-between"],
+  [style*="justify-content:space-between"] { flex-wrap: wrap !important; }
+
+  /* --- side gutters: 56px -> 22px on every 1280px content container --- */
+  div[style*="max-width: 1280px"] {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+  /* footer element carries its own gutter; hand it to the inner container */
+  footer[style*="padding: 64px 56px 40px"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* --- tighten the largest vertical section padding --- */
+  [style*="padding: 100px 56px"],
+  [style*="padding: 96px 56px"],
+  [style*="padding: 90px 56px"] {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+  [style*="padding: 84px 56px"],
+  [style*="padding: 80px 56px"] {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+
+  /* --- stack every multi-column grid (the team grid keeps its own rules) --- */
+  [style*="grid-template-columns"]:not(.dbteam-grid) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  /* ...but keep dense tile/link grids 2-up where a single column wastes space */
+  [style*="grid-template-columns: repeat(4,1fr)"]:not(.dbteam-grid),
+  [style*="grid-template-columns: repeat(3,1fr)"]:not(.dbteam-grid),
+  [style*="grid-template-columns: 1.4fr 1fr 1fr 1fr"]:not(.dbteam-grid) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  /* --- scale down display type --- */
+  [style*="font-size: 72px"],
+  [style*="font-size: 66px"],
+  [style*="font-size: 62px"],
+  [style*="font-size: 60px"],
+  [style*="font-size: 56px"] { font-size: 34px !important; }
+
+  [style*="font-size: 52px"],
+  [style*="font-size: 50px"],
+  [style*="font-size: 46px"],
+  [style*="font-size: 44px"] { font-size: 28px !important; }
+
+  [style*="font-size: 40px"],
+  [style*="font-size: 38px"] { font-size: 26px !important; }
+
+  [style*="font-size: 34px"] { font-size: 23px !important; }
+
+  /* --- tall hero panels --- */
+  [style*="min-height: 720px"] { min-height: 540px !important; }
+  [style*="min-height: 460px"] { min-height: 380px !important; }
+
+  /* --- header: let the nav wrap instead of overflowing --- */
+  header[style*="padding: 18px 56px"] {
+    padding: 14px 20px !important;
+    flex-wrap: wrap !important;
+    gap: 10px 16px !important;
+  }
+  header nav {
+    flex-wrap: wrap !important;
+    gap: 8px 16px !important;
+  }
+}
+
+/* ============================== <= 520px ============================== */
+@media (max-width: 520px) {
+
+  /* single column everywhere, including the 2-up tile grids above */
+  [style*="grid-template-columns"]:not(.dbteam-grid) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  /* step display type down further so nothing overflows a phone width */
+  [style*="font-size: 72px"],
+  [style*="font-size: 66px"],
+  [style*="font-size: 62px"],
+  [style*="font-size: 60px"],
+  [style*="font-size: 56px"] { font-size: 27px !important; }
+
+  [style*="font-size: 52px"],
+  [style*="font-size: 50px"],
+  [style*="font-size: 46px"],
+  [style*="font-size: 44px"] { font-size: 24px !important; }
+
+  [style*="font-size: 40px"],
+  [style*="font-size: 38px"] { font-size: 22px !important; }
+
+  /* stack the header: logo on top, nav as its own wrapping row */
+  header[style*="padding: 18px 56px"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  header nav {
+    width: 100% !important;
+    font-size: 12px !important;
+    gap: 10px 14px !important;
+  }
+  /* hide the small logo sub-line to give the nav room */
+  header a span span[style*="letter-spacing: 0.24em"] { display: none !important; }
+
+  /* footer bottom bar: stack the two lines */
+  footer div[style*="justify-content:space-between"] {
+    flex-direction: column !important;
+    gap: 6px !important;
+  }
+
+  /* a touch less side padding on the smallest screens */
+  div[style*="max-width: 1280px"] {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}
