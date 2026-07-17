@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="./pagetransition.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="responsive.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #121311; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: #E4531F; color: #121311; }
+
+  .proj-card { display:flex; flex-direction:column; background:#141512; border:1px solid rgba(255,255,255,0.09); text-decoration:none; color:inherit; transition:border-color .3s ease, transform .3s ease; }
+  .proj-card:hover { border-color:#E4531F; transform:translateY(-3px); }
+  .proj-img { position:relative; aspect-ratio: 3 / 2; overflow:hidden; background:#0d0e0c; }
+  .proj-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s ease; }
+  .proj-card:hover .proj-img img { transform:scale(1.045); }
+  .proj-badges { position:absolute; top:14px; left:14px; display:flex; gap:7px; flex-wrap:wrap; }
+  .pill { font-family:'Archivo',sans-serif; font-weight:800; font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; padding:6px 10px; line-height:1; }
+  .pill-o { background:#E4531F; color:#121311; }
+  .pill-d { background:rgba(13,14,12,0.82); color:#F4F4F0; border:1px solid rgba(255,255,255,0.22); }
+  .proj-meta { display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-family:'Archivo',sans-serif; font-weight:700; font-size:12.5px; color:#C9CCC7; margin-top:14px; }
+  .proj-meta i { width:4px; height:4px; border-radius:50%; background:#E4531F; display:inline-block; }
+</style>
+</helmet>
+
+<div style="width: 100%; background: #121311; color: #F4F4F0; font-family: 'IBM Plex Sans', sans-serif; overflow: hidden;">
+
+  <dc-import name="Header" hint-size="100%,82px"></dc-import>
+
+  <!-- banner -->
+  <section style="position: relative; min-height: 460px; display:flex; align-items:flex-end; background-image: linear-gradient(180deg, rgba(18,19,17,0.5) 0%, rgba(18,19,17,0.72) 50%, rgba(18,19,17,0.96) 100%), url('assets/proj-banner.jpg'); background-size: cover; background-position: center;">
+    <div style="width:100%; max-width: 1280px; margin: 0 auto; padding: 0 56px 56px;">
+      <div style="display:inline-flex; align-items:center; gap:10px; margin-bottom: 18px;">
+        <span style="width: 32px; height: 2px; background:#E4531F;"></span>
+        <span style="font-size: 12.5px; letter-spacing: 0.28em; text-transform: uppercase; color:#F4B78F; font-weight:600;">Our Work</span>
+      </div>
+      <h1 style="font-family:'Archivo',sans-serif; font-weight: 900; font-size: 62px; line-height: 0.98; letter-spacing: -0.03em; text-transform: uppercase; margin: 0; max-width: 900px;">Projects</h1>
+      <p style="font-size: 19px; line-height: 1.55; max-width: 640px; margin: 24px 0 0; color: #DDE0DB;">A selection of finish carpentry work delivered across Michigan — senior living, multifamily, hospitality, commercial, and production housing, on both new construction and renovation.</p>
+    </div>
+  </section>
+
+  <!-- stats -->
+  <section style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div style="max-width: 1280px; margin: 0 auto; display:grid; grid-template-columns: repeat(4,1fr);">
+      <div style="padding: 40px 40px; border-right: 1px solid rgba(255,255,255,0.1);">
+        <div style="font-family:'Archivo',sans-serif; font-size: 52px; font-weight: 900; line-height:1; letter-spacing:-0.03em;">25<span style="color:#E4531F;">+</span></div>
+        <div style="font-size: 13px; margin-top: 10px; color:#9aa09a;">Years installing finish carpentry</div>
+      </div>
+      <div style="padding: 40px 40px; border-right: 1px solid rgba(255,255,255,0.1);">
+        <div style="font-family:'Archivo',sans-serif; font-size: 52px; font-weight: 900; line-height:1; letter-spacing:-0.03em;">80<span style="color:#E4531F;">+</span></div>
+        <div style="font-size: 13px; margin-top: 10px; color:#9aa09a;">Completed projects statewide</div>
+      </div>
+      <div style="padding: 40px 40px; border-right: 1px solid rgba(255,255,255,0.1);">
+        <div style="font-family:'Archivo',sans-serif; font-size: 52px; font-weight: 900; line-height:1; letter-spacing:-0.03em;">1,500<span style="color:#E4531F;">+</span></div>
+        <div style="font-size: 13px; margin-top: 10px; color:#9aa09a;">Residential units finished</div>
+      </div>
+      <div style="padding: 40px 40px;">
+        <div style="font-family:'Archivo',sans-serif; font-size: 52px; font-weight: 900; line-height:1; letter-spacing:-0.03em;">MI<span style="color:#E4531F;">.</span></div>
+        <div style="font-size: 13px; margin-top: 10px; color:#9aa09a;">Serving projects across Michigan</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- featured project -->
+  <section style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 90px 56px;">
+      <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin-bottom: 14px;">Featured project</div>
+      <div style="display:grid; grid-template-columns: 1.25fr 1fr; gap: 48px; align-items:start;">
+
+        <div>
+          <div style="position:relative; border:1px solid rgba(255,255,255,0.09);">
+            <img src="assets/proj-ahpp.jpg" alt="American House Park Place, Warren MI — exterior" style="width:100%; display:block;">
+            <div class="proj-badges">
+              <span class="pill pill-d">Senior Living</span>
+              <span class="pill pill-o">Full Renovation</span>
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 1.4fr; gap:16px; margin-top:16px; align-items:center;">
+            <img src="assets/proj-ahpp-rendering.jpg" alt="American House Park Place — design rendering" style="width:100%; display:block; border:1px solid rgba(255,255,255,0.09);">
+            <p style="font-size:13.5px; line-height:1.6; color:#9aa09a; margin:0;">A phased, fully occupied renovation of an established senior living community — carried out floor by floor to keep residents in place throughout construction.</p>
+          </div>
+        </div>
+
+        <div>
+          <h2 style="font-family:'Archivo',sans-serif; font-weight: 900; font-size: 38px; line-height:1.02; letter-spacing:-0.03em; text-transform:uppercase; margin:0 0 10px;">American House<br>Park Place</h2>
+          <div style="font-size:14.5px; color:#C9CCC7; margin-bottom: 4px;">29250 Heritage Pkwy, Warren, MI 48092</div>
+          <div style="font-size:13.5px; color:#9aa09a; margin-bottom: 26px;">Independent Living · Assisted Living · Respite Care</div>
+
+          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:1px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.1); margin-bottom:26px;">
+            <div style="background:#121311; padding:20px 18px;"><div style="font-family:'Archivo',sans-serif; font-size:30px; font-weight:900; line-height:1; letter-spacing:-0.03em;">250</div><div style="font-size:12px; color:#9aa09a; margin-top:8px;">Units renovated</div></div>
+            <div style="background:#121311; padding:20px 18px;"><div style="font-family:'Archivo',sans-serif; font-size:30px; font-weight:900; line-height:1; letter-spacing:-0.03em;">100<span style="color:#E4531F;">%</span></div><div style="font-size:12px; color:#9aa09a; margin-top:8px;">Occupied &amp; phased</div></div>
+            <div style="background:#121311; padding:20px 18px;"><div style="font-family:'Archivo',sans-serif; font-size:30px; font-weight:900; line-height:1; letter-spacing:-0.03em;">4</div><div style="font-size:12px; color:#9aa09a; margin-top:8px;">Stories, full scope</div></div>
+          </div>
+
+          <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:#E4531F; margin-bottom:14px;">Scope highlights</div>
+          <div style="display:flex; flex-direction:column; gap:12px; font-size:15px; line-height:1.55; color:#DDE0DB;">
+            <div style="display:flex; gap:12px;"><span style="color:#E4531F; font-weight:800;">—</span><span>Replaced unit doors, frames, and hardware across all 250 apartments to current standards.</span></div>
+            <div style="display:flex; gap:12px;"><span style="color:#E4531F; font-weight:800;">—</span><span>New base, casing, and finish trim throughout resident units and corridors.</span></div>
+            <div style="display:flex; gap:12px;"><span style="color:#E4531F; font-weight:800;">—</span><span>Common-area millwork, reception casework, and continuous handrail systems.</span></div>
+            <div style="display:flex; gap:12px;"><span style="color:#E4531F; font-weight:800;">—</span><span>Sequenced around occupied floors with careful dust, noise, and access control.</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- all projects grid -->
+  <section style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 90px 56px;">
+      <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin-bottom: 14px;">Selected work</div>
+      <h2 style="font-family:'Archivo',sans-serif; font-weight: 900; font-size: 44px; line-height:1; letter-spacing:-0.03em; text-transform:uppercase; margin:0 0 12px;">Projects across Michigan</h2>
+      <p style="font-size: 17px; line-height:1.7; color:#9aa09a; max-width: 640px; margin: 0 0 44px;">A representative sample of D&amp;B's finish carpentry work, spanning new construction and renovation across a range of sectors and project sizes.</p>
+
+      <div class="proj-grid" style="display:grid; grid-template-columns: repeat(3,1fr); gap: 22px;">
+
+        <a class="proj-card" href="Contact.dc.html">
+          <div class="proj-img">
+            <img src="assets/proj-lockwood.jpg" alt="Lockwood of Southfield senior living community">
+            <div class="proj-badges"><span class="pill pill-d">Senior Living</span><span class="pill pill-o">New Build</span></div>
+          </div>
+          <div style="padding:22px 22px 26px;">
+            <div style="font-family:'Archivo',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.01em;">Lockwood of Southfield</div>
+            <div style="font-size:13.5px; color:#9aa09a; margin-top:4px;">Southfield, MI 48034 · Lockwood Companies</div>
+            <div class="proj-meta"><span>168 Units</span><i></i><span>New Build</span><i></i><span>2024</span></div>
+            <p style="font-size:14px; line-height:1.6; color:#9aa09a; margin:14px 0 0;">Complete finish package for a new affordable 55+ community — doors, frames &amp; hardware, unit trim, and amenity-space millwork.</p>
+          </div>
+        </a>
+
+        <a class="proj-card" href="Contact.dc.html">
+          <div class="proj-img">
+            <img src="assets/proj-woodward.jpg" alt="Woodward Station Apartments, Royal Oak MI">
+            <div class="proj-badges"><span class="pill pill-d">Multifamily</span><span class="pill pill-o">New Build</span></div>
+          </div>
+          <div style="padding:22px 22px 26px;">
+            <div style="font-family:'Archivo',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.01em;">Woodward Station Apartments</div>
+            <div style="font-size:13.5px; color:#9aa09a; margin-top:4px;">Royal Oak, MI</div>
+            <div class="proj-meta"><span>240 Units</span><i></i><span>New Build</span><i></i><span>2023</span></div>
+            <p style="font-size:14px; line-height:1.6; color:#9aa09a; margin:14px 0 0;">Market-rate mid-rise development. Full door, trim, and closet package installed on an aggressive turnover schedule across five floors.</p>
+          </div>
+        </a>
+
+        <a class="proj-card" href="Contact.dc.html">
+          <div class="proj-img">
+            <img src="assets/proj-riverfront.jpg" alt="Riverfront Lofts adaptive reuse, Detroit MI">
+            <div class="proj-badges"><span class="pill pill-d">Multifamily</span><span class="pill pill-o">Renovation</span></div>
+          </div>
+          <div style="padding:22px 22px 26px;">
+            <div style="font-family:'Archivo',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.01em;">Riverfront Lofts</div>
+            <div style="font-size:13.5px; color:#9aa09a; margin-top:4px;">Detroit, MI</div>
+            <div class="proj-meta"><span>120 Units</span><i></i><span>Adaptive Reuse</span><i></i><span>2022</span></div>
+            <p style="font-size:14px; line-height:1.6; color:#9aa09a; margin:14px 0 0;">Historic warehouse converted to loft apartments. Custom trim details tied new finishes into existing structure and exposed masonry.</p>
+          </div>
+        </a>
+
+        <a class="proj-card" href="Contact.dc.html">
+          <div class="proj-img">
+            <img src="assets/proj-maplegrove.jpg" alt="Maple Grove Estates production homes, Novi MI">
+            <div class="proj-badges"><span class="pill pill-d">Single-Family</span><span class="pill pill-o">New Build</span></div>
+          </div>
+          <div style="padding:22px 22px 26px;">
+            <div style="font-family:'Archivo',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.01em;">Maple Grove Estates</div>
+            <div style="font-size:13.5px; color:#9aa09a; margin-top:4px;">Novi, MI</div>
+            <div class="proj-meta"><span>64 Homes</span><i></i><span>Production</span><i></i><span>2021–2024</span></div>
+            <p style="font-size:14px; line-height:1.6; color:#9aa09a; margin:14px 0 0;">Ongoing single-family subdivision. Consistent interior trim, stair, and hardware packages delivered home after home on builder schedule.</p>
+          </div>
+        </a>
+
+        <a class="proj-card" href="Contact.dc.html">
+          <div class="proj-img">
+            <img src="assets/proj-emery.jpg" alt="The Emery Hotel renovation, Grand Rapids MI">
+            <div class="proj-badges"><span class="pill pill-d">Hospitality</span><span class="pill pill-o">Renovation</span></div>
+          </div>
+          <div style="padding:22px 22px 26px;">
+            <div style="font-family:'Archivo',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.01em;">The Emery Hotel</div>
+            <div style="font-size:13.5px; color:#9aa09a; margin-top:4px;">Grand Rapids, MI</div>
+            <div class="proj-meta"><span>96 Keys</span><i></i><span>Renovation</span><i></i><span>2023</span></div>
+            <p style="font-size:14px; line-height:1.6; color:#9aa09a; margin:14px 0 0;">Boutique hotel refresh. Architectural millwork, feature wall paneling, and refined trim in guest rooms and public spaces.</p>
+          </div>
+        </a>
+
+        <a class="proj-card" href="Contact.dc.html">
+          <div class="proj-img">
+            <img src="assets/proj-somerset.jpg" alt="Somerset Medical Plaza, Troy MI">
+            <div class="proj-badges"><span class="pill pill-d">Commercial</span><span class="pill pill-o">New Build</span></div>
+          </div>
+          <div style="padding:22px 22px 26px;">
+            <div style="font-family:'Archivo',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.01em;">Somerset Medical Plaza</div>
+            <div style="font-size:13.5px; color:#9aa09a; margin-top:4px;">Troy, MI</div>
+            <div class="proj-meta"><span>85,000 SF</span><i></i><span>New Build</span><i></i><span>2020</span></div>
+            <p style="font-size:14px; line-height:1.6; color:#9aa09a; margin:14px 0 0;">Multi-tenant medical office building. Door, frame &amp; hardware and finish carpentry coordinated around clinical build-out requirements.</p>
+          </div>
+        </a>
+
+        <a class="proj-card" href="Contact.dc.html">
+          <div class="proj-img">
+            <img src="assets/proj-corktown.jpg" alt="Corktown Commons mixed-use development, Detroit MI">
+            <div class="proj-badges"><span class="pill pill-d">Mixed-Use</span><span class="pill pill-o">New Build</span></div>
+          </div>
+          <div style="padding:22px 22px 26px;">
+            <div style="font-family:'Archivo',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.01em;">Corktown Commons</div>
+            <div style="font-size:13.5px; color:#9aa09a; margin-top:4px;">Detroit, MI</div>
+            <div class="proj-meta"><span>310 Units</span><i></i><span>Mixed-Use</span><i></i><span>2025</span></div>
+            <p style="font-size:14px; line-height:1.6; color:#9aa09a; margin:14px 0 0;">Residential-over-retail development. Large-scale finish carpentry package with ground-floor commercial trim and millwork.</p>
+          </div>
+        </a>
+
+        <a class="proj-card" href="Contact.dc.html" style="justify-content:center; align-items:center; text-align:center; padding:40px 28px; background:#E4531F; color:#121311; border-color:#E4531F;">
+          <div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:24px; line-height:1.05; letter-spacing:-0.02em; text-transform:uppercase;">Your project<br>could be next</div>
+          <div style="font-size:14px; margin-top:12px; color:#3a1a0d; max-width:240px;">Tell us about your finish carpentry scope and we'll follow up with a bid.</div>
+          <div style="margin-top:18px; font-family:'Archivo',sans-serif; font-weight:800; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;">Request a Bid →</div>
+        </a>
+
+      </div>
+      <p style="font-size: 13px; color:#565a53; margin-top: 26px;">Project names and figures shown for representative purposes. Contact us for verified references and completed-project details.</p>
+    </div>
+  </section>
+
+  <!-- process band -->
+  <section style="position: relative; background-image: linear-gradient(90deg, rgba(18,19,17,0.96) 0%, rgba(18,19,17,0.9) 45%, rgba(18,19,17,0.72) 100%), url('assets/proj-process.jpg'); background-size: cover; background-position: center; border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 96px 56px;">
+      <div style="max-width: 660px;">
+        <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color:#E4531F; font-weight:600; font-family:'Archivo',sans-serif; margin-bottom: 14px;">How we work</div>
+        <h2 style="font-family:'Archivo',sans-serif; font-weight: 900; font-size: 40px; line-height:1.05; letter-spacing:-0.03em; text-transform:uppercase; margin:0 0 18px;">Built to fit the schedule &amp; the scope</h2>
+        <p style="font-size: 18px; line-height:1.7; color:#DDE0DB; max-width: 600px;">From a single occupied renovation to a multi-building new-construction package, D&amp;B scales crews and sequences the finish phase to keep general contractors on schedule — with the same standard of workmanship on every project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#E4531F; color:#121311;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 90px 56px; display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;">
+      <div>
+        <h2 style="font-family:'Archivo',sans-serif; font-weight: 900; font-size: 52px; line-height:0.95; letter-spacing:-0.03em; text-transform:uppercase; margin:0 0 14px;">Have a project<br>coming up?</h2>
+        <p style="font-size: 18px; margin:0; max-width: 560px; color:#3a1a0d;">Send us the details and D&amp;B will follow up about your finish carpentry scope.</p>
+      </div>
+      <a href="Contact.dc.html" style="background:#121311; color:#F4F4F0; padding: 20px 38px; font-weight:800; font-size:16px; letter-spacing:0.04em; text-transform:uppercase; font-family:'Archivo',sans-serif; white-space:nowrap;" style-hover="background:#000;">Request a Bid →</a>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,360px"></dc-import>
+
+</div>
+</x-dc>
+</body>
+</html>
