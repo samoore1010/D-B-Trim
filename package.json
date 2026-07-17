@@ -1,0 +1,13 @@
+{
+  "name": "d-b-trim",
+  "version": "1.0.0",
+  "private": true,
+  "description": "D&B Trim marketing homepage, served as a static site.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
